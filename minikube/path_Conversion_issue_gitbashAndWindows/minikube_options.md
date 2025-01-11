@@ -219,4 +219,39 @@ Example Command
 minikube start --driver=virtualbox --memory=4096 --cpus=2 --disk-size=20g --kubernetes-version=v1.28.0 --addons=dashboard,metrics-server
 ~~~
 This document covers the most common options for configuring Minikube. Let me know if you'd like additional information or assistance with a specific setup!
+List all Minikube profiles:
+~~~
+minikube profile list
+~~~
+Set a specific Minikube profile as active:
+~~~
+minikube profile <profile-name>
+~~~
+Start a Minikube tunnel for a specific cluster:
+~~~
+minikube -p cluster1 tunnel
+~~~
+Get cluster information for a specific profile:
+~~~
+minikube -p cluster1 status
+~~~
+Check IP and port for a specific Minikube cluster:
+~~~
+minikube ip -p cluster1
+~~~
+Start a Minikube cluster:
 
+~~~
+minikube -p cluster1 start
+~~~
+Delete a specific Minikube cluster:
+
+~~~
+minikube delete -p cluster1
+~~~
+This removes all resources and configurations associated with the cluster1 profile.
+
+Delete all Minikube clusters:
+~~~
+minikube delete --all
+~~~
